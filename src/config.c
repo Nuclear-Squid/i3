@@ -201,6 +201,7 @@ bool load_configuration(const char *override_configpath, config_load_t load_type
     INIT_COLOR(config.client.unfocused, "#333333", "#222222", "#888888", "#292d2e");
     INIT_COLOR(config.client.urgent, "#2f343a", "#900000", "#ffffff", "#900000");
     config.client.got_focused_tab_title = false;
+    config.show_titlebar = true;
 
     /* border and indicator color are ignored for placeholder contents */
     INIT_COLOR(config.client.placeholder, "#000000", "#0c0c0c", "#ffffff", "#000000");

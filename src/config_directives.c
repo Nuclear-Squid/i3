@@ -525,6 +525,16 @@ CFGFUN(title_align, const char *alignment) {
     }
 }
 
+CFGFUN(titlebar, const char *visibility) {
+    if (strcmp(visibility, "show") == 0) {
+        config.show_titlebar = true;
+    } else if (strcmp(visibility, "hide") == 0) {
+        config.show_titlebar = false;
+    } else {
+        assert(false);
+    }
+}
+
 CFGFUN(show_marks, const char *value) {
     config.show_marks = boolstr(value);
 }

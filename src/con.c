@@ -1939,6 +1939,12 @@ int con_border_style(Con *con) {
         return BS_NONE;
     }
 
+    if (!config.show_titlebar) {
+        return con->parent != NULL && con->parent->type == CT_DOCKAREA
+            ? BS_NONE
+            : con->border_style;
+    }
+
     if (con->parent != NULL) {
         if (con->parent->layout == L_STACKED) {
             return (con_num_children(con->parent) == 1 ? con->border_style : BS_NORMAL);

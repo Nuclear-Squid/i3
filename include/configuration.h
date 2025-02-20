@@ -218,6 +218,8 @@ struct Config {
         ALIGN_RIGHT
     } title_align;
 
+    bool show_titlebar;
+
     /** The default border style for new windows. */
     border_style_t default_border;
 

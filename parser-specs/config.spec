@@ -50,6 +50,7 @@ state INITIAL:
   'force_display_urgency_hint'             -> FORCE_DISPLAY_URGENCY_HINT
   'focus_on_window_activation'             -> FOCUS_ON_WINDOW_ACTIVATION
   'title_align'                            -> TITLE_ALIGN
+  'titlebar', 'title_bar'                  -> TITLEBAR
   'show_marks'                             -> SHOW_MARKS
   'workspace'                              -> WORKSPACE
   'ipc_socket', 'ipc-socket'               -> IPC_SOCKET
@@ -323,6 +324,11 @@ state FORCE_DISPLAY_URGENCY_HINT:
 state TITLE_ALIGN:
   alignment = 'left', 'center', 'right'
       -> call cfg_title_align($alignment)
+
+# titlebar [show|hide]
+state TITLEBAR:
+  visibility = 'show', 'hide'
+      -> call cfg_titlebar($visibility)
 
 # show_marks
 state SHOW_MARKS:
